@@ -13,28 +13,26 @@
 </head>  
 
 <body>
-    <div class="container">
+<div class="container">
     <img id="Disney-Background" src="https://wallpapercave.com/wp/RuvHtvj.jpg" class="img-fluid" alt="Responsive image">
     <button class="btn">Welcome</button>
-    </div class = "questionContainer">
+    <div class="content">
+        <h1>Disney Music Trivia</h1>
+        <p>You have 10 minutes to complete all 10 questions, good luck!</p>
+    </div>
+  </div>  
 
-    <div class="col-md-8">
-        <div id="start-page" class="onceUponaTime">
-                <blockquote contenteditable="true"><q>This is a disney music trivia, You have 5 minutes to answer all 10 questions.</q>
-                </blockquote>
-              <!-- <button type="button" class="btn btn-primary btn-lg btn-block">Let's Go!</button> -->
-              </div>
-        </div>
     
-<!--This section will have all questions-->
-  
+</div class = "questionContainer">
+
+    <div class='start-page'></div>
+<!--This section will be hidden until button is clicked-->
         <div id="questions"></div>
-        <div id="timer">Timer</div>
+        <div id="timer"></div>
 
 
 <!--End page to show scores-->
     <div class="hidden" id="finalScore">
-        <h2>These are your scores</h2>
         <p id="correct"></p>
         <p id="incorrect"></p>
         <p id="unanswered"></p>

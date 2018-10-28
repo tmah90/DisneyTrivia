@@ -14,7 +14,7 @@
   /* Style the button and place it in the middle of the container/image */
   .container .btn {
     position: absolute;
-    top: 85%;
+    top: 82%;
     left: 50%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
@@ -30,35 +30,18 @@
   .container .btn:hover {
     background-color: black;
   }
-/* start page instruction, attempting animated text
-  * {
-    box-sizing: border-box;
+  .container {
+    position: relative; 
+    max-width: auto; /* Maximum width */
+    margin: 0 auto; /* Center it */
   }
-
-  blockquote {
-    font-size: 3rem;
-  }
-  blockquote q {
-    font-family: Georgia, serif;
-    font-style: italic;
-    letter-spacing: .1rem;
-  }
-  blockquote q span { 
-    will-change: opacity, filter;
-    opacity: 0;
-    filter: blur(0px);
-  }
-  q {
-    quotes: "“" "”" "‘" "’";
-  }
-  q:before {
-      content: open-quote;
-      margin-right: .8rem;
-  }
-  q:after {
-    content: close-quote;
-  }
-  q:before, q:after {
-    color: #ccc;
-    font-size: 4rem;
+  
+  .container .content {
+    position: absolute; /* Position the background text */
+    bottom: 0; /* At the bottom. Use top:0 to append it to the top */
+    background: rgb(0, 0, 0); /* Fallback color */
+    background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+    color: #f1f1f1; /* Grey text */
+    width: 75%; /* Full width */
+    padding: 20px; /* Some padding */
   }
