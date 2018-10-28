@@ -1,20 +1,20 @@
-$(document).ready(function(){
-    //start the game on "Start Button"
-$('#start-button').on('click, gameStatus.startTime');
-});
-
+$(document).ready(function()
+{
+    //start the game on "Let's Go" button
+$('.btn').on('click', gameStatus.startTime)
+// console.log(btn btn-primary btn-lg btn-block);
 // Game Start
 var gameStatus = {
 //start timer and count down by seconds 
-timeRemaining: 60,
+timeRemaining: 600,
 // Show the questions 
-timerStart: function() 
+startTime: function() 
 {
     $('#timer').text('Time remaining:' + gameStatus.timeRemaining);
     setInterval(gameStatus.countdown, 1000);
     $('#start-page').hide();
     trivia.displayQuestions();
-    console.log(this.timerStart);
+    // console.log(this.timerStart); TIMER WORKS!
 }, 
 
 //counting down 
@@ -28,12 +28,23 @@ countdown: function()
     }
 },
 
-// check answers 
-stopTimer:function(){
-    clearInterval();
-    trivia.checkAnswers();
-},
-}
+// // check answers 
+// stopTimer:function(){
+//     clearInterval();
+//     trivia.checkAnswers();
+// },
+// // done with trvia, showing score page 
+// theEnd: function (aCorrect, aIncorrect, aUnanswered){
+//     $('#finalScore').show();
+//     $('#questions').empty();
+//     $('#timer').empty();
+//     $('#timer').hide();
+//     $('#correct').text("WooHoo!"): "" + aCorrect);
+//     $('#incorrect').text('#Oh Noo'):"" + aIncorrect);
+//     $('#unanswered').text('#Uh OH'):'' + aUnanswered);
+// }
+// }
+
 //declare questions 
 var question0 = 
 {
@@ -120,6 +131,18 @@ var question9=
 
 // console.log(question0); WORKED!
 //created an array for the questions
-
+//variables
 var questionsArray = [question0,question1,question2,question3,question4,question5,question6,question7,question8,question9];
+var questionIndex =0;
+
+function nextQuestion()
+{
+    questionIndex++;
+    if (questionIndex < questionsArray.length)
+    {
+    showQuestions();
+    $('#timer')   
+    }
+}
+
 
