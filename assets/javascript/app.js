@@ -5,13 +5,14 @@ var questionsArray= [question0,question1,question2,question3,question4,question5
 var timeStart;
 var timeStop;
 var reset;
-var gameScores;
+var finalScore;
 var nextQuestion;
 var timer;
 var questionContainer=0;
 var startGame;
 var timeRemain;
 var gameStatus;
+var answerCheck
 
 });
 var question0 = 
@@ -102,7 +103,7 @@ var question9=
 $('#timer').hide();
 $('#button').hide();
 $('#reset').hide();
-$('#gameScore').hide();
+$('#finalScore').hide();
 $('#questionContainer').hide();
 
 
@@ -141,10 +142,36 @@ timeStop:function(){
 function startGame()
 {
     $('#question').html(''+ questionsArray[questionContainer].question+'');
-    $("#button0").text(QuestionsArray[questionContainer].choices[0]);
-    $("#button1").text(QuestionsArray[questionContainer].choices[1]);
-	$("#button2").text(QuestionsArray[questionContainer].choices[2]);
-	$("#button3").text(QuestionsArray[questionContainer].choices[3]);
+    $("#button0").text(questionsArray[questionContainer].choices[0]);
+    $("#button1").text(questionsArray[questionContainer].choices[1]);
+	$("#button2").text(questionsArray[questionContainer].choices[2]);
+	$("#button3").text(questionsArray[questionContainer].choices[3]);
 }
-//User input answer 
+//check user answer
+ $('.btn').on("click",'.answer', function(){
+     userAnswer=$(this).text();
+     if(userAnswer===answer[questionContainer]) {
+         clearInterval(timer);
+            win();
+ }
+ else {
+     clearInterval(timer);
+     loss();
+ }
+ });
+
+ //final page and scores 
+ var finalScore = {
+     correct:0;
+     incorrect:0;
+     unanswered:0;
+ };
+
+ //reset function 
+ function reset() {
+     correct=0;
+     incorrect=0;
+     unanswered=0;
+     timeRemain=60;
+ }
 
