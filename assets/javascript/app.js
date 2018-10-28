@@ -1,8 +1,21 @@
 $(document).ready(function()
 {
-//start the game on "Welcome" button
-$('.btn').on('click', gameStatus.startTime)    
-//declare questions 
+//global variables 
+var questionsArray: [question0,question1,question2,question3,question4,question5,question6,question7,question8,question9];
+var numcorrect=0;
+var numincorrect=0;
+var numunanswered=0;
+var timeStart;
+var timeStop;
+var reset;
+var gameScores;
+var nextQuestion;
+var timer;
+var questionContainer=0;
+
+
+}
+
 var question0 = 
 {
     question: "What was the first-ever Disney movie to get a soundtrack released?",
@@ -85,50 +98,4 @@ var question9=
 	choices: ['Beauty and the Beast','Snow White', 'Sleeping Beauty', 'Aladdin'],
     correctAnswer: 0,
 };
-
-// console.log(question0); WORKED!
-// Game Start
-  var gameStatus = {
-  //start timer and count down by seconds 
-  timeRemaining: 600,
-  // Show the questions 
-  startTime: function() 
-  {
-      $('#timer').text('Time remaining:' + gameStatus.timeRemaining);
-      setInterval(gameStatus.countdown, 1000);
-      $('#start-page').hide();
-      trivia.displayQuestions();
-      // console.log(this.timerStart); TIMER WORKS!
-  }
-} 
-  
-  //counting down 
-  countdown: function()
-  {
-      gameStatus.timeRemaining --;
-      $('#timer').text('Time remaining:' + gameStatus.timeRemaining);
-      if(gameStatus.timeRemaining===0){
-          gameStatus.stopTimer();
-          $('#timer').empty();
-      }
-  }
 }
-  
-  // // check answers 
-// //   stopTimer: function()
-//   {
-//       clearInterval();
-//       trivia.checkAnswers();
-//   },
-  // done with trivia, showing score page 
-  theEnd: function (aCorrect, aIncorrect, aUnanswered){
-      $('#finalScore').show();
-      $('#questions').empty();
-      $('#timer').empty();
-      $('#timer').hide();
-      $('#correct').text("WooHoo!" + aCorrect);
-      $('#incorrect').text('#Oh Noo'+ aIncorrect);
-      $('#unanswered').text('#Uh OH'+ aUnanswered);
-  // }
-  // }
-

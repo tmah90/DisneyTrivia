@@ -38,10 +38,10 @@
   
   .container .content {
     position: absolute; /* Position the background text */
-    bottom: 0; /* At the bottom. Use top:0 to append it to the top */
+    bottom: 0; /* At the bottom. */
     background: rgb(0, 0, 0); /* Fallback color */
     background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
     color: #f1f1f1; /* Grey text */
-    width: 75%; /* Full width */
+    width: 75%; 
     padding: 20px; /* Some padding */
   }
