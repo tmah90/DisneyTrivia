@@ -1,10 +1,7 @@
 $(document).ready(function()
 {
 //global variables 
-var questionsArray: [question0,question1,question2,question3,question4,question5,question6,question7,question8,question9];
-var numcorrect=0;
-var numincorrect=0;
-var numunanswered=0;
+var questionsArray= [question0,question1,question2,question3,question4,question5,question6,question7,question8,question9];
 var timeStart;
 var timeStop;
 var reset;
@@ -12,10 +9,11 @@ var gameScores;
 var nextQuestion;
 var timer;
 var questionContainer=0;
+var startGame;
+var timeRemain;
+var gameStatus;
 
-
-}
-
+});
 var question0 = 
 {
     question: "What was the first-ever Disney movie to get a soundtrack released?",
@@ -98,4 +96,55 @@ var question9=
 	choices: ['Beauty and the Beast','Snow White', 'Sleeping Beauty', 'Aladdin'],
     correctAnswer: 0,
 };
+// console.log(question3);
+
+//before btn is clicked, hiding elements
+$('#timer').hide();
+$('#button').hide();
+$('#reset').hide();
+$('#gameScore').hide();
+$('#questionContainer').hide();
+
+
+$('#welcomebtn').on('click', startGame.timeStart);
+{ 
+    // console.log(welcomebtn); didnt work =(
+   startGame();
+   timeStart();
+   questionContainer();
+   timer();
+   reset();
 }
+
+//Timer in Game Mode 
+var startGame= 
+{
+timeRemain:60,
+//timer start 
+timeStart:function() {
+    $('#welcomebtn').text("Time Remaining:"+gameStatus.timeRemain);
+    setInterval(gameStatus.countdown, 1000);
+    $('#homepage').hide();
+    startGame.questionContainer();
+    
+},
+timeStop:function(){
+    gameStatus.timeRemain--;
+    $('#timer').text("Time Remaining:"+gameStatus.timeRemain);
+    if (gameStatus.timeRemain===0){
+        gameStatus.timeStop();
+        $('#timer').empty();
+    }
+}
+}
+//start game  & display questions 
+function startGame()
+{
+    $('#question').html(''+ questionsArray[questionContainer].question+'');
+    $("#button0").text(QuestionsArray[questionContainer].choices[0]);
+    $("#button1").text(QuestionsArray[questionContainer].choices[1]);
+	$("#button2").text(QuestionsArray[questionContainer].choices[2]);
+	$("#button3").text(QuestionsArray[questionContainer].choices[3]);
+}
+//User input answer 
+
