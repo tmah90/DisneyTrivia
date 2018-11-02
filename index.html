@@ -14,46 +14,26 @@
 <body>
 <div class="container">
         <div id='homepage'>
-    <img id="Disney-Background" src="https://wallpapercave.com/wp/RuvHtvj.jpg" class="img-fluid" alt="Responsive image">
-    <button class="btn" id="welcomebtn">Welcome</button>
+    <img id="Disney-Background" src="https://wallpapercave.com/wp/am7htsQ.jpg" class="img-fluid" alt="Responsive image">
     <div class="content">
-        <h1>Disney Music Trivia</h1>
+       <div class="centered"><strong>Disney Music Trivia</strong></div>
         <p>You have 10 minutes to complete all 10 questions, good luck!</p>
-    </div>
-  </div>  
-  </div>
-
-    
-</div class = "questionContainer"></div>
-<div class="row">
-        <button type="button" class="btn btn-primary btn-lg" id="button0" data-value=0>Button0</button>
+    <br>
+    <body>
+      <div id='trivia'></div>
+      <br>
+        <div class='timer'></div>
+    		<div class='button' id='next'><a href='#'>Next</a></div>
+    <!--show score upon submit-->
+        <div>
+          <h2 class="triviaScore" id="userScore"></h2>
+        </div>
       </div>
-      <div class="row">
-        <button type="button" class="btn btn-primary btn-lg" id="button1" data-value=1>Button1</button>
-      </div>
-      <div class="row">
-        <button type="button" class="btn btn-primary btn-lg" id="button2" data-value=2>Button2</button>
-      </div>
-      <div class="row">
-        <button type="button" class="btn btn-primary btn-lg" id="button3" data-value=3>Button3</button>
-      </div>
-
-    <div class='start-page'></div>
-<!--This section will be hidden until button is clicked-->
-        <div id="questions"></div>
-        <div id="timer"></div>
-
-
-<!--End page to show scores-->
-    <div class="hidden" id="finalScore">
-        <p id="correct"></p>
-        <p id="incorrect"></p>
-        <p id="unanswered"></p>
-
-    <div class="row">
+    </body>
+    <!-- <div class="row">
             <button type="reset" class="resetme" id="reset" value=reset>Reset Game</button>
      
-    </div>
+    </div> -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="assets/javascript/app.js"></script>
